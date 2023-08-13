@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+
+public class Runner {
+
+	public static void main(String[] args) {
+		Scanner sr = new Scanner(System.in);
+		String str = sr.nextLine();
+		String ans = getCompressedString(str);
+		System.out.println(ans);
+		
+	}
+	public static String getCompressedString(String str) {
+		String s="";
+		int count =1;
+		char r=str.charAt(0);
+		for(int i=1;i<str.length();i++)
+		{
+			char v=str.charAt(i);
+        if(v==r)
+		{
+			count++;
+		}
+		else
+		{
+			if(count>1)
+			{
+				s=s+r+count;
+			}
+			else
+			{
+				 s=s+r;
+			}
+				r=str.charAt(i);
+				count=1;
+		}
+		}
+		if(count>1)
+		{
+			s=s+r+count;
+		}
+		else{
+			s=s+r;
+		}
+		
+		return s;
+
+	}
+}
