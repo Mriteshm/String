@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+
+public class Runner {
+
+	public static void main(String[] args) {
+		Scanner sr =  new Scanner(System.in);
+		String str = sr.next();
+
+		printSubstrings(str);
+		
+	}
+	public static void printSubstrings(String str) {
+		if(str.length()==1)
+		{
+			System.out.print(str.charAt(0));
+		}
+		for(int i=0;i<str.length();i++)
+		{
+			for(int j=i+1;j<=str.length();j++)
+			{
+			System.out.println(str.substring(i,j));
+	     	}
+		}
+	}
+}
