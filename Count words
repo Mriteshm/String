@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+
+public class Runner {
+
+	public static void main(String[] args) {
+		Scanner sr= new Scanner(System.in);
+		String str = sr.nextLine();
+		if(str==null)
+		{
+			str="";
+		}
+		int count = countWords(str);
+		System.out.println(count);
+	}
+
+	public static int countWords(String str) {	
+		if(str.length()==0)
+		{
+			return 0;
+		}
+		char a;
+		int c=0;
+		for(int i=0;i<str.length();i++)
+		{
+			a=str.charAt(i);
+			if(a==32)
+			{
+				c++;
+			}
+		}
+		return c+1;
+	}
+}
