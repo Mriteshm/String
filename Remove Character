@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+
+public class Runner {
+
+	public static void main(String[] args) {
+		Scanner sr = new Scanner(System.in);
+		String str = sr.nextLine();
+		char x = sr.next().charAt(0);
+		String ans = removeAllOccurrencesOfChar(str, x);
+		System.out.println(ans);
+		
+	}
+  
+	public static String removeAllOccurrencesOfChar(String str, char ch) {
+		while(str.length()==1)
+		{
+             if(str.charAt(0)==ch)
+			 {
+				 return " ";
+			 }
+			 else
+			 {
+				 return str;
+			 }
+		}
+			 int count=0;
+			 for(int i=0;i<str.length();i++)
+			 {
+				 if(str.charAt(i)==ch)
+				 {
+					 count++;
+				 }
+			 }
+			 int m=str.length()-count;
+			 char[] d=new char[m];
+			  int x=0;
+			 for(int j=0;j<str.length();j++)
+			 {
+				 if(str.charAt(j)!=ch)
+				 {
+                    d[x]=str.charAt(j);
+					x++;
+				 }
+			 }
+		return new String(d);
+	}
+}
